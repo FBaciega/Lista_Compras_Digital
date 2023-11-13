@@ -21,7 +21,6 @@ while True:
         lista_de_compras.append(ação_usuário)
 
     elif ação_usuário == opções_usuário[1]:
-        os.system('cls')
         indice_str = input('Digite o número do item na lista para apága-lo: ')
         try:
             i = int(indice_str)
