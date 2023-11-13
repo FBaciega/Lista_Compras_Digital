@@ -1,0 +1,45 @@
+import os
+
+print('Bem vindo a lista de compras digital!')
+lista_de_compras = []
+
+while True:
+
+    ação_usuário = input('[i]nserir, [a]pagar, [l]istar: ')
+
+   
+    opções_usuário = 'i','a','l'
+
+    if len(ação_usuário) > 1:
+        print('Por favor, digite apenas uma letra: ')
+        continue
+    
+
+    elif ação_usuário == opções_usuário[0]:
+        os.system('cls')
+        ação_usuário = input('Insira um item na lista: ')
+        lista_de_compras.append(ação_usuário)
+
+    elif ação_usuário == opções_usuário[1]:
+        os.system('cls')
+        indice_str = input('Digite o número do item na lista para apága-lo: ')
+        try:
+            i = int(indice_str)
+            del lista_de_compras[i]
+        except TypeError:
+            print('Por favor, digite apenas números inteiros.')
+        except IndexError:
+            print('Índice não existe na lista.')
+
+    elif ação_usuário == opções_usuário[2]:
+        os.system('cls')
+        if len(lista_de_compras) == 0:
+            print('Nenhum item foi inserido na lista.')
+            continue
+        for indice, nome in enumerate(lista_de_compras):
+            print(indice,nome)
+    
+    else:
+        os.system('cls')
+        print('Por favor, digite somente "i,a, ou l" para realizar a ação desejada.')
+    
